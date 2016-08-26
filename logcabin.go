@@ -26,9 +26,6 @@ var (
 	infoLincoln    *Lincoln
 	warningLincoln *Lincoln
 	errorLincoln   *Lincoln
-
-	Service  string
-	Artifact string
 )
 
 // Log Level Constants
@@ -45,9 +42,6 @@ func init() {
 
 // Init initializes the loggers.
 func Init(service, artifact string) {
-	Service = service
-	Artifact = artifact
-
 	traceLincoln = &Lincoln{service, artifact, traceLevel}
 	infoLincoln = &Lincoln{service, artifact, infoLevel}
 	warningLincoln = &Lincoln{service, artifact, warnLevel}
