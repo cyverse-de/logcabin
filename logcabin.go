@@ -22,10 +22,10 @@ var (
 	// Error is the logger for the error log level.
 	Error *log.Logger
 
-	TraceLincoln   *Lincoln
-	InfoLincoln    *Lincoln
-	WarningLincoln *Lincoln
-	ErrorLincoln   *Lincoln
+	traceLincoln   *Lincoln
+	infoLincoln    *Lincoln
+	warningLincoln *Lincoln
+	errorLincoln   *Lincoln
 
 	Service  string
 	Artifact string
@@ -47,15 +47,15 @@ func Init(service, artifact string) {
 	Service = service
 	Artifact = artifact
 
-	TraceLincoln = &Lincoln{service, artifact, traceLevel}
-	InfoLincoln = &Lincoln{service, artifact, infoLevel}
-	WarningLincoln = &Lincoln{service, artifact, warnLevel}
-	ErrorLincoln = &Lincoln{service, artifact, errorLevel}
+	traceLincoln = &Lincoln{service, artifact, traceLevel}
+	infoLincoln = &Lincoln{service, artifact, infoLevel}
+	warningLincoln = &Lincoln{service, artifact, warnLevel}
+	errorLincoln = &Lincoln{service, artifact, errorLevel}
 
-	Trace = log.New(TraceLincoln, "", log.Lshortfile)
-	Info = log.New(InfoLincoln, "", log.Lshortfile)
-	Warning = log.New(WarningLincoln, "", log.Lshortfile)
-	Error = log.New(ErrorLincoln, "", log.Lshortfile)
+	Trace = log.New(traceLincoln, "", log.Lshortfile)
+	Info = log.New(infoLincoln, "", log.Lshortfile)
+	Warning = log.New(warningLincoln, "", log.Lshortfile)
+	Error = log.New(errorLincoln, "", log.Lshortfile)
 }
 
 // LogMessage represents a message that will be logged in JSON format.
