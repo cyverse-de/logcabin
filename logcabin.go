@@ -10,10 +10,17 @@ import (
 )
 
 var (
-	Trace   *log.Logger
-	Info    *log.Logger
+	// Trace is the logger for the trace log level.
+	Trace *log.Logger
+
+	// Info is the logger for the info log level.
+	Info *log.Logger
+
+	// Warning is the logger for the warning log level.
 	Warning *log.Logger
-	Error   *log.Logger
+
+	// Error is the logger for the error log level.
+	Error *log.Logger
 
 	TraceLincoln   *Lincoln
 	InfoLincoln    *Lincoln
