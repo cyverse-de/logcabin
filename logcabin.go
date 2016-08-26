@@ -36,10 +36,6 @@ const (
 	errorLevel = "ERR"
 )
 
-func init() {
-	Init("jobservices", "default")
-}
-
 // Init initializes the loggers.
 func Init(service, artifact string) {
 	traceLincoln = &Lincoln{service, artifact, traceLevel}
