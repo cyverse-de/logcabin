@@ -1,3 +1,4 @@
+#!groovy
 def repo = "logcabin"
 def dockerUser = "discoenv"
 
